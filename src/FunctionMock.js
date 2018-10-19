@@ -12,11 +12,6 @@ class FunctionMock {
         this.callIndex = 0
     }
 
-    static getSmartMock(functionName, mockDataSource) {
-        var mock = new FunctionMock(functionName, mockDataSource)
-        return mock
-    }
-
     callFunction(callArguments) {
         var output = {}
             this.assertInput(callArguments, this.callIndex)
@@ -27,8 +22,6 @@ class FunctionMock {
             
         return output
     }
-
-   
 
     assertInput(callArguments, callIndex) {
         expect(VariableLiteral.getVariableLiteral(this.mockDataSource.input[callIndex]).getLiteral()).
