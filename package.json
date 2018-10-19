@@ -1,0 +1,22 @@
+{
+  "name": "runtime-spies-harness",
+  "version": "1.0.0",
+  "description": "Creates unit test harnesses for legacy code",
+  "main": "./src/RuntimeSpy.js",
+  "scripts": {
+    "test": "mocha ./test/*Tests.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yakik/RuntimeSpies-Javascript"
+  },
+  "author": "Yaki Koren",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0"
+  },
+  "dependencies": {
+    "variable-literal": "^1.0.1"
+  }
+}
