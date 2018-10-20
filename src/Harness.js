@@ -11,6 +11,8 @@ class Harness {
         this.functionMocks = new Map()
     }
 
+       
+    
     static getHarnessCode(harnessName, runtimeSpyJSON) {
         var harnessFactory = new HarnessFactory(harnessName, runtimeSpyJSON)
         return harnessFactory.getHarnessCode()

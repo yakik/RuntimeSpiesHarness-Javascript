@@ -34,13 +34,14 @@ mocha.describe('Get Javscript from harness(Code) JSON', function () {
                 ]
             }
         ]
-        var expectedJavascript = 'var a_DB = [{"arguments":[1,5],"returnValue":6},{"arguments":[5,-3],"returnValue":2}]\n'+
-        'var a_counter = 0\n'+
-        'var a = function(){\n'+
-        'var output = Harness.mockFunctionValidateInputAndGetOutput(\'a\', a_DB, a_counter)\n'+
-        'a_counter++\n'+
-        'return output\n'+
-        '}\n'
+        var expectedJavascript = 'var a_DB = [{"arguments":[1,5],"returnValue":6},{"arguments":[5,-3],"returnValue":2}]\n' +
+            'var a_counter = 0\n' +
+            'var a = function(){\n' +
+            'expect(Array.from(arguments)).deep.equal(a_DB[a_counter].arguments)\n' +
+            'var output = a_DB[a_counter].returnValue\n' +
+            'a_counter++\n' +
+            'return output\n' +
+            '}\n'
         expect(HarnessJSONToJavascript(harnessJSON)).equals(expectedJavascript)
     })
 })

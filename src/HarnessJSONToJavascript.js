@@ -51,12 +51,12 @@ var getCodeForFunctionDefinition=function(harnessJSON) {
  }
 
 var getCodeForValidateInputAndGetOutput=function(harnessJSON) {
-    var javascriptCode = 'var ' + harnessJSON.outputVariable + ' = ' +
-        'Harness.mockFunctionValidateInputAndGetOutput(\'' + harnessJSON.function +
-    '\', '+harnessJSON.DB+', '+harnessJSON.counter+')\n'
+    var javascriptCode = 'expect(Array.from(arguments)).deep.equal('+harnessJSON.DB+'['+harnessJSON.counter+'].arguments)\n'
+    javascriptCode+= 'var ' + harnessJSON.outputVariable + ' = ' +
+        harnessJSON.DB+'['+harnessJSON.counter+'].returnValue\n'
     return javascriptCode
- }
-
+}
+ 
 var getCodeForIncreaseCounterByOne=function(harnessJSON) {
    
     return harnessJSON.counter+'++\n'
