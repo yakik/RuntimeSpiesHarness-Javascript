@@ -1,7 +1,7 @@
 var mocha = require('mocha')
 var chai = require('chai')
 var expect = chai.expect
-var spyJSONToHarnessJSON = require('../src/SpyJSONToHarnessJSON')
+var SpyJSONToHarnessJSON = require('../src/SpyJSONToHarnessJSON')
 
 mocha.describe('Get Code JSON From Spy JSON', function () {
 
@@ -24,7 +24,7 @@ mocha.describe('Get Code JSON From Spy JSON', function () {
         var expectedJSON = [
             { variableDefinition: { name: 'a', value: 2 } }
         ]
-        expect(spyJSONToHarnessJSON(spyJSON)).to.deep.equal(expectedJSON)
+        expect(SpyJSONToHarnessJSON(spyJSON)).to.deep.equal(expectedJSON)
     })
     mocha.it('One Function', function () {
 
@@ -72,6 +72,6 @@ mocha.describe('Get Code JSON From Spy JSON', function () {
                 ]
             }
         ]
-        expect(spyJSONToHarnessJSON(spyJSON)).to.deep.equal(expectedJSON)
+        expect(SpyJSONToHarnessJSON(spyJSON)).to.deep.equal(expectedJSON)
     })
 })
